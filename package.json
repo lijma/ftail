@@ -4,6 +4,10 @@
   "publisher": "lijma",
   "description": "Real-time file monitoring - like tail -f in VS Code output panel",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lijma/ftail.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
