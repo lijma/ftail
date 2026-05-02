@@ -1,6 +1,7 @@
 {
   "name": "ftail",
   "displayName": "ftail",
+  "publisher": "lijma",
   "description": "Real-time file monitoring - like tail -f in VS Code output panel",
   "version": "0.0.1",
   "engines": {
