@@ -1,0 +1,10 @@
+out/**
+node_modules/**
+src/**
+.vscode/**
+**/*.map
+**/*.ts
+.fcontext/**
+.github/**
+console.log
+dev.log

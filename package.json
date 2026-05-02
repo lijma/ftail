@@ -1,0 +1,99 @@
+{
+  "name": "ftail",
+  "displayName": "ftail",
+  "description": "Real-time file monitoring - like tail -f in VS Code output panel",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ftail.monitorFile",
+        "title": "Monitor with ftail"
+      },
+      {
+        "command": "ftail.stopMonitoring",
+        "title": "Stop Monitoring (ftail)"
+      },
+      {
+        "command": "ftail.toggleSyntaxHighlighting",
+        "title": "Toggle Syntax Highlighting (ftail)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "ftail.monitorFile",
+          "group": "navigation",
+          "when": "resourceScheme == file"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "ftail",
+      "properties": {
+        "ftail.syntaxHighlighting.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable syntax highlighting for log output (uses ANSI colors)"
+        },
+        "ftail.syntaxHighlighting.colorizeLogLevels": {
+          "type": "boolean",
+          "default": true,
+          "description": "Colorize log levels (ERROR, WARN, INFO, SUCCESS, DEBUG)"
+        },
+        "ftail.syntaxHighlighting.colorizeTimestamps": {
+          "type": "boolean",
+          "default": true,
+          "description": "Colorize timestamps in log output"
+        },
+        "ftail.syntaxHighlighting.colorizeNumbers": {
+          "type": "boolean",
+          "default": true,
+          "description": "Colorize numbers in log output"
+        },
+        "ftail.syntaxHighlighting.colorizeUrls": {
+          "type": "boolean",
+          "default": true,
+          "description": "Colorize URLs in log output"
+        },
+        "ftail.syntaxHighlighting.colorizeIpAddresses": {
+          "type": "boolean",
+          "default": true,
+          "description": "Colorize IP addresses in log output"
+        },
+        "ftail.syntaxHighlighting.colorizeFilePaths": {
+          "type": "boolean",
+          "default": true,
+          "description": "Colorize file paths in log output"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTests.js",
+    "test:unit": "npm run compile && npx mocha --require ./out/test/setup.js './out/test/unit/**/*.test.js' --timeout 10000",
+    "coverage": "npx c8 npm run test:unit"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.0",
+    "@types/sinon": "^17.0.3",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-electron": "^2.3.8",
+    "c8": "^9.1.0",
+    "mocha": "^10.3.0",
+    "sinon": "^17.0.1",
+    "typescript": "^5.3.3"
+  }
+}

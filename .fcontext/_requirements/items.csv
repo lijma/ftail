@@ -1,0 +1,6 @@
+id,type,title,status,priority,parent,assignee,tags,created,updated,author,source,links
+REQ-001,requirement,右键监控文件 - Monitor with ftail,draft,P2,,,,2026-05-02,2026-05-02,,,
+REQ-002,requirement,实时显示文件新增内容到输出面板,draft,P2,,,,2026-05-02,2026-05-02,,,
+REQ-003,requirement,Stop Monitoring 按钮停止监控,draft,P2,,,,2026-05-02,2026-05-02,,,
+REQ-004,requirement,不影响其他程序的正常读写操作,draft,P2,,,,2026-05-02,2026-05-02,,,
+STORY-001,story,支持日志语法高亮显示,draft,P1,,,"ui,enhancement",2026-05-02,2026-05-02,,,
